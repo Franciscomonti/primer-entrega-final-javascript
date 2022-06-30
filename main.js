@@ -53,7 +53,7 @@ function selTipoProd() {
     let seleccionTipoProducto = 0
 
     do {
-        seleccionTipoProducto = prompt(`seleccione el tipo de producto deseado: \n-Gaseosas\n-Aguas Saborizadas\n-Todos `)
+        seleccionTipoProducto = prompt(`seleccione el tipo de producto deseado: \n-Gaseosas\n-Aguas\n-Todos `)
 
         if (seleccionTipoProducto.toLowerCase() == "gaseosas") {
             return seleccionProducto(listaGaseosas, gaseosas)
@@ -131,15 +131,24 @@ function seleccionCuotas(precio) {
 
 // confirmacion de compra 
 
+
 function confirmar() {
 
-    let confirmacion = prompt("Confirma la compra ? Si/No")
+    let confirmacion = 0
 
-    if (confirmacion.toLowerCase() == "si") {
-        alert("Muchas gracias por su compra !")
-    } else {
-        alert("Gracias por su visita !")
+    do {
+        confirmacion = prompt("Confirma la compra ? Si/No")
+
+        if (confirmacion.toLowerCase() == "si") {
+            return alert("Muchas gracias por su compra !")
+        } else if (confirmacion.toLowerCase() == "no") {
+            return alert("Muchas gracias por su visita !")
+        } else {
+            alert("Seleccione una opcion valida")
+        }
     }
+    while (confirmacion != "si" != "no")
+
 }
 
 // funcion para dar orden a las otras funciones
